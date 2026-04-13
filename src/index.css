@@ -1,38 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Fredoka:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Outfit", sans-serif;
+  --font-sans: "Fredoka", "Jua", sans-serif;
+  --font-display: "Jua", sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-transparent text-slate-900 min-h-screen selection:bg-cyan-500/30 overflow-x-hidden;
+    @apply bg-[#00FF00] text-black min-h-screen selection:bg-[#FF00E5] selection:text-white overflow-x-hidden font-sans;
+    background-image: 
+      repeating-linear-gradient(45deg, #FF00E5 0, #FF00E5 2px, transparent 0, transparent 50%),
+      repeating-linear-gradient(-45deg, #00E5FF 0, #00E5FF 2px, transparent 0, transparent 50%);
+    background-size: 30px 30px;
   }
 }
 
 .mystical-card {
-  @apply bg-white border border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] transition-all duration-300 rounded-2xl;
+  @apply border-[8px] border-black shadow-[25px_25px_0px_0px_#000] transition-all duration-200 rounded-none relative overflow-visible;
+}
+
+.stitch-bg {
+  background-color: white;
+  background-image: 
+    radial-gradient(#FF00E5 2px, transparent 2px),
+    radial-gradient(#00E5FF 2px, transparent 2px);
+  background-size: 19px 19px, 19px 19px;
+  background-position: 0 0, 9.5px 9.5px;
 }
 
 .mystical-card:hover {
-  @apply border-cyan-200 shadow-[0_4px_20px_-3px_rgba(6,182,212,0.1)];
+  @apply translate-x-[-10px] translate-y-[-10px] shadow-[40px_40px_0px_0px_#FF00E5];
 }
 
 .neon-text {
-  @apply bg-gradient-to-r from-cyan-600 to-indigo-600 bg-clip-text text-transparent font-black;
+  @apply text-black font-black uppercase tracking-tighter italic;
+  filter: drop-shadow(8px 8px 0px #00E5FF) drop-shadow(-8px -8px 0px #FF00E5);
+  animation: colorCycle 2s linear infinite;
+}
+
+@keyframes colorCycle {
+  0% { color: black; }
+  33% { color: #FF00E5; }
+  66% { color: #00E5FF; }
+  100% { color: black; }
 }
 
 .saju-char {
-  @apply w-12 h-16 flex flex-col items-center justify-center rounded-xl border border-slate-50 bg-slate-50/50 transition-all duration-500;
+  @apply w-28 h-36 flex flex-col items-center justify-center border-[8px] border-black shadow-[12px_12px_0px_0px_#000] transition-all duration-100 rounded-none bg-white relative;
+}
+
+.saju-char:hover {
+  @apply scale-125 z-50 bg-[#FFDE03] rotate-12;
 }
 
 .glass-input {
-  @apply bg-slate-50 border-slate-100 focus:border-cyan-500/30 focus:ring-cyan-500/10 transition-all text-sm;
+  @apply bg-white border-[6px] border-black focus:ring-0 focus:border-[#FF00E5] transition-all text-2xl font-black rounded-none;
+  box-shadow: 10px 10px 0px 0px #000;
 }
 
 .btn-primary {
-  @apply bg-slate-900 hover:bg-slate-800 text-white font-bold transition-all active:scale-[0.98] shadow-sm;
+  @apply bg-[#FFDE03] hover:bg-black hover:text-[#00FF00] text-black border-[6px] border-black font-black uppercase transition-all active:translate-x-[10px] active:translate-y-[10px] active:shadow-none shadow-[15px_15px_0px_0px_#000] rounded-none py-8;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.pop-badge {
+  @apply border-[4px] border-black font-black px-6 py-3 text-lg uppercase rounded-none shadow-[6px_6px_0px_0px_#000] bg-white;
 }
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";

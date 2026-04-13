@@ -12,12 +12,12 @@ export const ELEMENTS: Record<string, string> = {
   "甲": "Wood", "乙": "Wood", "갑": "Wood", "을": "Wood",
   "丙": "Fire", "丁": "Fire", "병": "Fire", "정": "Fire",
   "戊": "Earth", "己": "Earth", "무": "Earth", "기": "Earth",
-  "庚": "Metal", "辛": "Metal", "경": "Metal",
+  "庚": "Metal", "辛": "Metal", "경": "Metal", "신": "Metal",
   "壬": "Water", "癸": "Water", "임": "Water", "계": "Water",
   "寅": "Wood", "卯": "Wood", "인": "Wood", "묘": "Wood",
   "辰": "Earth", "戌": "Earth", "丑": "Earth", "未": "Earth", "진": "Earth", "술": "Earth", "축": "Earth", "미": "Earth",
   "巳": "Fire", "午": "Fire", "사": "Fire", "오": "Fire",
-  "申": "Metal", "酉": "Metal", "신": "Metal", "유": "Metal",
+  "申": "Metal", "酉": "Metal", "유": "Metal",
   "亥": "Water", "子": "Water", "해": "Water", "자": "Water"
 };
 
